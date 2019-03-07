@@ -1,9 +1,11 @@
 /* cambio de color de navbar ------------------*/
-$(window).scroll(function() {
-	if ($("#navbar").offset().top > 300) {
-		$("#navbar").addClass("bg-darks");
-	} else {
-		$("#navbar").removeClass("bg-darks");
+var nav = document.getElementById('navbar'),
+navH;
+document.onscroll = () => {
+	navH = nav.offsetHeight;
+	if(document.documentElement.scrollTop > navH || document.body.scrollTop > navH){
+		nav.classList.add('bg-darks');
+	}else{
+		nav.classList.remove('bg-darks');
 	}
-});
-/* cambio de color de navbar ------------------*/
+}
